@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<title>Conversation collapse fixture</title>
+<style>
+  body { margin: 0; }
+  .thread-scroll-container { height: 500px; overflow-y: auto; }
+  [data-virtualized-turn-content] { padding: 8px; }
+  .MarkdownRoot { height: 900px; }
+</style>
+<div class="thread-scroll-container">
+  <div data-virtualized-turn-content>
+    <div class="group/user-message">첫 번째 질문</div>
+  </div>
+  <div data-virtualized-turn-content id="first-answer">
+    <div class="MarkdownRoot"><h2>첫 번째 답변</h2></div>
+    <div class="turn-action-controls">답변 도구</div>
+  </div>
+  <div data-virtualized-turn-content>
+    <div class="group/user-message">두 번째 질문</div>
+  </div>
+  <div data-virtualized-turn-content id="second-answer">
+    <div class="MarkdownRoot"><h2>두 번째 답변</h2></div>
+    <div class="turn-action-controls">답변 도구</div>
+  </div>
+</div>
+<script src="../src/dom/selectors.js"></script>
+<script src="../src/dom/parser.js"></script>
+<script src="../src/dom/registry.js"></script>
+<script src="../src/dom/observer.js"></script>
+<script src="../src/navigation/collapse.js"></script>
+<script src="../src/navigation/scroll.js"></script>
+<script src="../src/navigation/activeHeading.js"></script>
+<script>window.chrome = { runtime: { getURL: (path) => `../${path}` } };</script>
+<script src="../src/navigation/navigation.js"></script>
+</html>

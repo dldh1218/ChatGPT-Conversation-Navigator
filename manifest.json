@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Conversation Navigator",
+  "version": "1.0.0",
+  "description": "Adds a compact, in-page table of contents to ChatGPT conversations.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": [
+        "src/dom/selectors.js",
+        "src/dom/parser.js",
+        "src/dom/registry.js",
+        "src/navigation/scroll.js",
+        "src/navigation/activeHeading.js",
+        "src/navigation/collapse.js",
+        "src/navigation/navigation.js",
+        "src/dom/observer.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/styles/navigation.css"],
+      "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*"]
+    }
+  ]
+}
